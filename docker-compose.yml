@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  # MongoDB service
+  mongodb:
+    image: mongo:latest
+    container_name: task-manager-mongodb
+    restart: always
+    ports:
+      - "27018:27017"
+    volumes:
+      - mongodb_data:/data/db
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+
+  # Node.js application (uncomment to use)
+  # app:
+  #   build: .
+  #   container_name: task-manager-api
+  #   restart: always
+  #   ports:
+  #     - "5000:5000"
+  #   environment:
+  #     - PORT=5000
+  #     - MONGO_URI=mongodb://root:password@mongodb:27018/task-manager?authSource=admin
+  #     - JWT_SECRET=your_jwt_secret_key
+  #     - JWT_EXPIRE=30d
+  #     - NODE_ENV=development
+  #   depends_on:
+  #     - mongodb
+  #   networks:
+  #     - task-manager-network
+  #   volumes:
+  #     - ./:/app
+  #     - /app/node_modules
+
+volumes:
+  mongodb_data:
