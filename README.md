@@ -89,9 +89,9 @@ A full-featured task management system with RESTful API, authentication, and a s
 
 4. **Start MongoDB with Docker**
    ```bash
-   docker-compose up -d mongodb mongo-express
+   docker-compose up -d mongodb
    ```
-   This will start MongoDB on port `27018` and Mongo Express (web-based admin) on port `8081`.
+   This will start MongoDB on port `27018`.
 
 5. **Start the application**
 
@@ -109,7 +109,6 @@ A full-featured task management system with RESTful API, authentication, and a s
 
    - Web interface: [http://localhost:5000](http://localhost:5000)
    - API: [http://localhost:5000/api](http://localhost:5000/api)
-   - MongoDB admin: [http://localhost:8081](http://localhost:8081)
 
 ---
 
